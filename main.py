@@ -1,13 +1,10 @@
 """
-# [M4.L1] Carrera de tortugas - Actividad # 8 "Aficionados"
+# [M4.L1] Carrera de tortugas - Actividad Extra "Aficionados coloridos"
 
 
-# Objetivo: Dibujar espectadores para nuestro evento
+# Objetivo: Implementar colores random para nuestros espectadores
 
-Paso Nº 1: Creamos una nueva tortuga para dibujar los espectadores
-Paso Nº 2: La ponemos en posición
-Paso Nº 3: Calculamos un número random de espectadores (por defecto entre 2 y 10)
-Paso Nº 4: Escribimos un bucle for que use dib_espectadores para simular varias tortugas
+Pasos: Editar el color de la tortuga "dib_espectadores" ANTES de que deje su marca con stamp()
 """
 
 import turtle
@@ -118,7 +115,8 @@ tercera.speed(velocidad_corredores)    # Cambiamos su velocidad de animación pa
 
 dib_espect = turtle.Turtle()   # Creamos una tortuga que dibujará la silueta de los espectadores
 dib_espect.shape("turtle")     # Le damos forma de tortuga (para usar stamp)
-dib_espect.color("purple")     # Seteamos su color -> próximamente random
+# Seteamos su color a un valor random
+dib_espect.color( (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255) ) )
 # La ubicamos en posición:
 dib_espect.penup()
 dib_espect.speed(0)
@@ -130,6 +128,8 @@ dib_espect.speed(velocidad_corredores)
 # Mínimo 2 espectadores - Máx 10
 for i in range(1, random.randint(2,10)):
     dib_espect.stamp()         # Dejamos huellita/marca de tortuga
+    # Cambiamos el color y repetimos
+    dib_espect.color( (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255) ) )
     dib_espect.seth(0)
     dib_espect.fd(distancia_entre_tortugas/2 + 5)
     dib_espect.seth(90)
@@ -168,13 +168,6 @@ paso_tortuga = 0         # Variable que randomizamos para cada tortuga en cada r
 distancia_recorrida_tortuga_1 = 0
 distancia_recorrida_tortuga_2 = 0
 distancia_recorrida_tortuga_3 = 0
-
-"""
-Paso Nº 5: Agregamos el bucle de la carrera: while(not tenemos_ganadora)
--> incluír random
-Paso Nº 6: En cada iteración del bucle:
-            1º) Verificamos (if) si alguna cruzó la meta -> hay ganadora
-            2º) Si NINGUNA ha cruzado la meta... las haremos avanzar un cantidad random cada ronda"""
 
 ######################### >>> BUCLE PRINCIPAL <<< ########################
 while (not tenemos_ganadora):
@@ -221,3 +214,19 @@ t.write(win_text)
 # To-do: agregar condición que compare nuestra predicción con el resultado
 
 # Colorín colorado el código ha terminado :D
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
